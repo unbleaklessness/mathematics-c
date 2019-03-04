@@ -1,0 +1,13 @@
+cmake_minimum_required(VERSION 3.2)
+
+set(CMAKE_INSTALL_PREFIX ${PROJECT_SOURCE_DIR})
+
+set(MY_INSTALL_LIBRARY_DIR ${CMAKE_SOURCE_DIR}/lib)
+set(MY_INSTALL_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/include)
+set(MY_INSTALL_BINARY_DIR ${CMAKE_SOURCE_DIR}/bin)
+
+set(MY_SOURCE_DIR ${CMAKE_SOURCE_DIR}/src)
+set(MY_TEST_DIR ${CMAKE_SOURCE_DIR}/test)
+
+add_subdirectory(${MY_SOURCE_DIR})
+add_subdirectory(${MY_TEST_DIR})
