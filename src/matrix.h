@@ -3,6 +3,10 @@
 
 #include <stdlib.h>
 
+#include "macro.h"
+
+MY_LIB_BEGIN_DECLARATIONS
+
 typedef struct Matrix Matrix;
 
 Matrix *matrix_create(size_t r, size_t c);
@@ -51,5 +55,7 @@ size_t matrix_columns(const Matrix *m);
 size_t matrix_rows(const Matrix *m);
 
 void matrix_print(const Matrix *m);
+
+MY_LIB_END_DECLARATIONS
 
 #endif // MATRIX_H_

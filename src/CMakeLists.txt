@@ -3,19 +3,21 @@ cmake_minimum_required(VERSION 3.2)
 set(MY_MATHEMATICS_PROJECT_NAME mathematics)
 
 set(MY_MATHEMATICS_H_FILES
-  matrix.h
-  vector.h
-)
+        matrix.h
+        vector.h
+        mathematics.h
+        macro.h
+        matrix_internal.h
+        vector_internal.h)
 
 set(MY_MATHEMATICS_CPP_FILES
-  matrix.c
-  vector.c
-)
+        matrix.c
+        vector.c
+        mathematics.c)
 
 set(MY_MATHEMATICS_FILES
   ${MY_MATHEMATICS_H_FILES}
-  ${MY_MATHEMATICS_CPP_FILES}
-)
+  ${MY_MATHEMATICS_CPP_FILES})
 
 project(${MY_MATHEMATICS_PROJECT_NAME})
 

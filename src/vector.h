@@ -3,6 +3,10 @@
 
 #include <stdlib.h>
 
+#include "macro.h"
+
+MY_LIB_BEGIN_DECLARATIONS
+
 typedef struct Vector Vector;
 
 Vector *vector_create(size_t s);
@@ -38,5 +42,7 @@ int vector_set_value(Vector *v, size_t i, float n);
 size_t vector_size(const Vector *v);
 
 void vector_print(const Vector *v);
+
+MY_LIB_END_DECLARATIONS
 
 #endif // VECTOR_H_
