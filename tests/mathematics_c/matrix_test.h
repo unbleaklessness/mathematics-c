@@ -1,3 +1,6 @@
+#ifndef MATRIX_TEST_H_
+#define MATRIX_TEST_H_
+
 #include <check.h>
 
 #include "matrix.h"
@@ -102,3 +105,5 @@ TCase *create_matrix_test_case() {
 
     return t;
 }
+
+#endif // MATRIX_TEST_H_

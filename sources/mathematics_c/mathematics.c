@@ -1,6 +1,7 @@
 #include "mathematics.h"
 #include "matrix_internal.h"
 #include "vector_internal.h"
+#include "quaternion_internal.h"
 
 #include <string.h>
 
@@ -32,6 +33,50 @@ Matrix *vector_to_horizontal_matrix(const Vector *v) {
     if (r == NULL) return NULL;
 
     memcpy(r->d, v->d, v->s * sizeof(float));
+
+    return r;
+}
+
+Vector *quaternion_to_vector(const Quaternion *q) {
+    Vector *v = vector_create(3);
+    if (v == NULL) {
+        return NULL;
+    }
+
+    v->d[0] = q->x;
+    v->d[1] = q->y;
+    v->d[2] = q->z;
+
+    return v;
+}
+
+Vector *quaternion_vector_multiply(const Quaternion *q, const Vector *v) {
+    if (v->s != 3) {
+        return NULL;
+    }
+
+    Quaternion *qv = quaternion_create(0.0f, v->d[0], v->d[1], v->d[2]);
+    if (qv == NULL) {
+        return NULL;
+    }
+
+    Quaternion *qc = quaternion_conjugate(q);
+    if (qc == NULL) {
+        quaternion_destroy(qv);
+        return NULL;
+    }
+
+    quaternion_multiply_r(q, qv);
+    quaternion_multiply_l(qv, qc);
+
+    Vector *r = quaternion_to_vector(qv);
+
+    quaternion_destroy(qc);
+    quaternion_destroy(qv);
+
+    if (r == NULL) {
+        return NULL;
+    }
 
     return r;
 }

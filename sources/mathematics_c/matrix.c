@@ -1,13 +1,9 @@
 #include "matrix.h"
+#include "matrix_internal.h"
 
 #include <string.h>
 #include <stdio.h>
 #include <math.h>
-
-typedef struct Matrix {
-    size_t r, c;
-    float *d;
-} Matrix;
 
 Matrix *matrix_create(size_t r, size_t c) {
 

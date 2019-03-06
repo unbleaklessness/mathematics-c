@@ -1,3 +1,6 @@
+#ifndef VECTOR_TEST_H_
+#define VECTOR_TEST_H_
+
 #include <check.h>
 
 #include "vector.h"
@@ -31,3 +34,5 @@ TCase *create_vector_test_case() {
 
     return t;
 }
+
+#endif // VECTOR_TEST_H_

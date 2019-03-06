@@ -1,13 +1,9 @@
 #include "vector.h"
+#include "vector_internal.h"
 
 #include <stdio.h>
 #include <math.h>
 #include <string.h>
-
-typedef struct Vector {
-    size_t s;
-    float *d;
-} Vector;
 
 Vector *vector_create(size_t s) {
 
