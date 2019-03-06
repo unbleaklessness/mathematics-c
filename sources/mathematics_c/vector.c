@@ -22,6 +22,46 @@ Vector *vector_create(size_t s) {
     return v;
 }
 
+Vector *vector_create_2(float x, float y) {
+    Vector *r = vector_create(2);
+    if (r == NULL) {
+        return NULL;
+    }
+
+    r->d[0] = x;
+    r->d[1] = y;
+
+    return r;
+}
+
+Vector *vector_create_3(float x, float y, float z) {
+    Vector *r = vector_create(3);
+    if (r == NULL) {
+        return NULL;
+    }
+
+    r->d[0] = x;
+    r->d[1] = y;
+    r->d[2] = z;
+
+    return r;
+}
+
+Vector *vector_create_4(float x, float y, float z, float w) {
+    Vector *r = vector_create(4);
+    if (r == NULL) {
+        return NULL;
+    }
+
+    r->d[0] = x;
+    r->d[1] = y;
+    r->d[2] = z;
+    r->d[3] = w;
+
+    return r;
+}
+
+
 void vector_destroy(Vector *v) {
     free(v->d);
     free(v);

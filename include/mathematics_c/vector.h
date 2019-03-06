@@ -10,6 +10,9 @@ MY_LIB_BEGIN_DECLARATIONS
 typedef struct Vector Vector;
 
 Vector *vector_create(size_t s);
+Vector *vector_create_2(float x, float y);
+Vector *vector_create_3(float x, float y, float z);
+Vector *vector_create_4(float x, float y, float z, float w);
 void vector_destroy(Vector *v);
 
 Vector *vector_from_array(const float *arr, size_t s);
